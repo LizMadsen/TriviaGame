@@ -14,6 +14,7 @@ class TriviasService {
         console.log('api getTrivia response', response.data)
 
         ProxyState.trivia = Response.data.results.map(t => new Trivia(t))
+
     }
 
 }
