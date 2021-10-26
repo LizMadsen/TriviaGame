@@ -15,13 +15,14 @@ export class TriviaController {
         this.getTrivia()
     }
 
-    async getTrivia(url) {
+    async getTrivia() {
         try {
-            await triviasService.getTrivia(url)
+            await triviasService.getTrivia()
             console.log('controller: get trivia finished');
         }
         catch (error) {
             console.error('error error error', error)
         }
     }
+
 }

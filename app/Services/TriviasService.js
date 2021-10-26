@@ -7,13 +7,13 @@ class TriviasService {
         console.log('Trivia Service loaded!')
     }
 
-    async getTrivia(url = 'trivia') {
+    async getTrivia() {
         console.log('service: getting the trivia');
 
-        const response = await api.get(url)
+        const response = await api.get(api.baseURL)
         console.log('api getTrivia response', response.data)
 
-        ProxyState.trivia = Response.data.results.map(t => new Trivia(t))
+        ProxyState.trivia = response.data.results.map(t => new Trivia(t))
 
     }
 
